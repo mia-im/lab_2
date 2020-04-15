@@ -2,15 +2,14 @@
 session_start();
 require_once 'class.php';
 
-
 if ($_SESSION['role']!='admin'&&$_SESSION['role']!='manager'||empty($_SESSION['role'])){
 		header('HTTP/1.0 403 Forbidden');
 		die();
 	}
 
 else {
-		echo lang::trans('Hello').' '.lang::trans($_SESSION['role']).' '.lang::trans($_SESSION['name']);
-
+		$manager = new manager($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
+		$manager->printInf();	
 	}
 ?>
 
