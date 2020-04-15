@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-$lang=$_POST['lang'];
-$_SESSION['lang']=$lang;
+$_SESSION['lang']=$_POST['lang'];
 header("Location:if.php");
 ?>
 
