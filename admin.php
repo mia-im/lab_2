@@ -2,14 +2,14 @@
 session_start();
 require_once 'class.php';
 
-
 if ($_SESSION['role']!='admin'){
 		header('HTTP/1.0 403 Forbidden');
 		die();
 	}
 
 else {
-		echo lang::trans('Hello').' '.lang::trans($_SESSION['role']).' '.lang::trans($_SESSION['name']);
+		$admin = new admin($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
+		$admin->printInf();		
 	}
 ?>
 
