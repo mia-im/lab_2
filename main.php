@@ -1,5 +1,6 @@
 <?php 
 session_start();
+if ($_SESSION['login']=='empty') echo 'Вы ввели неверный логин или пароль<br/><br/>';
 session_destroy();
 ?>
 
