@@ -12,7 +12,6 @@ $users = [
 
 $i=0;
 foreach ($users as $item) {
-
 	if($users[$i]['login']==$_POST["login"] && $users[$i]['password']==$_POST["password"]){
 		$_SESSION=$users[$i];
 	}
