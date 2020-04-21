@@ -9,7 +9,6 @@ if(empty($_SESSION['login'])){
 }
 
 elseif(empty($_SESSION['lang'])){
-	$_SESSION['lang'] = 'ru';
 	header("Location: language.php");
 }
 
