@@ -8,8 +8,8 @@ if ($_SESSION['role']!='admin'){
 	}
 
 else {
-		$admin = new admin($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
-		$admin->printInf();		
+		$user=auth();
+		$user->printInf();		
 	}
 ?>
 
