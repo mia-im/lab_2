@@ -2,7 +2,7 @@
 session_start();
 
 
-$user = [
+$users = [
 ['login' => 'Vasisualiy', 'password' => '12345', 'name'=>'Василий','surname'=>'Лоханкин', 'lang' => 'ru','role'=>'admin'],
 ['login' => 'Afanasiy', 'password' => '54321', 'name'=>'Афанасий','surname'=>'Цукерберг', 'lang' => 'en','role'=>'client'],
 ['login' => 'Petro', 'password' => '11111', 'name'=>'Петр','surname'=>'Инкогнито' ,'lang' => 'uk','role'=>'manager'],
@@ -11,17 +11,10 @@ $user = [
 ];
 
 $i=0;
-foreach ($user as $item) {
+foreach ($users as $item) {
 
-	if($user[$i]['login']==$_POST["login"] && $user[$i]['password']==$_POST["password"]){
-
-		$_SESSION['name']=$item['name'];
-		$_SESSION['surname']=$item['surname'];
-		$_SESSION['role']=$item['role'];
-		$_SESSION['lang']=$item['lang'];
-		$_SESSION['password']=$item['password'];
-		$_SESSION['login']=$item['login'];
-
+	if($users[$i]['login']==$_POST["login"] && $users[$i]['password']==$_POST["password"]){
+		$_SESSION=$users[$i];
 	}
 	$i++;
 }
