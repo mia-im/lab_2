@@ -57,6 +57,10 @@ public static $translate=[
 
 public static function trans($text)
 	{
+		if (empty($_SESSION['lang']))
+			{
+				$_SESSION['lang']='ru';
+			}
                 return self::$translate[$_SESSION['lang']][$text];
 	}
 }
