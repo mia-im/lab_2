@@ -60,4 +60,20 @@ public static function trans($text)
                 return self::$translate[$_SESSION['lang']][$text];
 	}
 }
+
+function auth(){
+	if (empty($_SESSION['role'])){
+			return null;
+		}
+	
+	if ($_SESSION['role']=='admin'){
+		return new admin($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
+	}
+	if ($_SESSION['role']=='manager'){
+		return new manager($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
+	}
+	if ($_SESSION['role']=='client'){
+		return new client($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
+	}
+}
 ?>
