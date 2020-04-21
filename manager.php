@@ -8,8 +8,8 @@ if ($_SESSION['role']!='admin'&&$_SESSION['role']!='manager'||empty($_SESSION['r
 	}
 
 else {
-		$manager = new manager($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
-		$manager->printInf();	
+		$user=auth();
+		$user->printInf();
 	}
 ?>
 
