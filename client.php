@@ -8,8 +8,8 @@ if (empty($_SESSION['role'])){
 	}
 
 else {
-		$client = new client($_SESSION['role'],$_SESSION['name'],$_SESSION['surname'],$_SESSION['lang']);
-		$client->printInf();		
+		$user=auth();
+		$user->printInf();	
 	}
 ?>
 
