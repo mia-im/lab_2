@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once 'class.php';
 
 
 if(empty($_SESSION['login'])){
