@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if(empty($_SESSION['login'])){
 	$_SESSION['login']='empty';
 	header("Location: main.php");
